@@ -1,0 +1,19 @@
+BoxLayout:
+    orientation: "vertical"
+    TextInput:
+        id: quote_input
+        hint_text: "quote"
+    TextInput:
+        id: author_input
+        hint_text: "author"
+    Label:
+        id: lbl
+        quote: ""
+        author: ""
+        text: "firebase quotes:\n" + self.quote + "\n" + self.author
+    Button:
+        text: "save"
+        on_release: app.save_quote(quote_input.text, author_input.text)
+    Button:
+        text: "fetch"
+        on_release: app.fetch_quote()
